@@ -1,0 +1,48 @@
+@import "_null";
+
+body{
+    background-color: #002910;
+}
+.playing-field{
+    background-color: #00501f;
+    border: solid 2px #001f0c;
+    border-top: none;
+    width: 1400px;
+    height: 800px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+.card {
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+    width: 130px;
+    height: 180px;
+    &__inverted{
+        transform: rotateY(180deg);
+    }
+    &__card-shirt, &__drawing{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 10%;
+        backface-visibility: hidden;
+    }
+    &__card-shirt{
+        background-color: #923232;
+        border: 15px solid #fff;
+    }
+    &__drawing{
+        background-size: 90px;
+        background-repeat: no-repeat;
+        background-color: #fff;
+        background-position: center;
+        transform: rotateY(180deg);
+        &--clover{
+            background-image: url(../img/Clover2b.svg);
+        }
+    }
+}

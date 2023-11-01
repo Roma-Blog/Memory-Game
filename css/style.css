@@ -1,0 +1,122 @@
+@charset "UTF-8";
+/*Обнуление*/
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+:focus, :active {
+  outline: none;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+nav, footer, header, aside {
+  display: block;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+/*-------------------------------------------------------------------------------------*/
+body {
+  background-color: #002910;
+}
+
+.playing-field {
+  background-color: #00501f;
+  border: solid 2px #001f0c;
+  border-top: none;
+  width: 1400px;
+  height: 800px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.card {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+  width: 130px;
+  height: 180px;
+}
+.card__inverted {
+  transform: rotateY(180deg);
+}
+.card__card-shirt, .card__drawing {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 10%;
+  backface-visibility: hidden;
+}
+.card__card-shirt {
+  background-color: #923232;
+  border: 15px solid #fff;
+}
+.card__drawing {
+  background-size: 90px;
+  background-repeat: no-repeat;
+  background-color: #fff;
+  background-position: center;
+  transform: rotateY(180deg);
+}
+.card__drawing--clover {
+  background-image: url(../img/Clover2b.svg);
+}

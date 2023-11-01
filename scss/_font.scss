@@ -1,0 +1,16 @@
+@font-face {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    src: local("Roboto"),
+         url("/fonts/roboto.woff2") format("woff2"),
+         url("/fonts/roboto.woff") format("woff");
+}
+@font-face {
+    font-family: "GT-Super-Display";
+    font-style: bold;
+    font-weight: 900;
+    src: local("GT-Super-Display"),
+         url("/fonts/GT-Super-Display.woff2") format("woff2"),
+         url("/fonts/GT-Super-Display.woff") format("woff");
+}
