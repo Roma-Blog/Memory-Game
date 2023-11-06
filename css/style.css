@@ -83,16 +83,24 @@ body {
   width: 1400px;
   height: 800px;
   margin: auto;
+}
+
+.card-box {
+  width: 800px;
+  height: 100%;
+  margin: auto;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  align-content: center;
   gap: 16px;
 }
 
 .card {
   position: relative;
   transform-style: preserve-3d;
-  transition: transform 0.5s;
+  transition: transform 0.5s, opacity 0.5s;
   width: 130px;
   height: 180px;
 }
@@ -117,6 +125,6 @@ body {
   background-position: center;
   transform: rotateY(180deg);
 }
-.card__drawing--clover {
-  background-image: url(../img/Clover2b.svg);
+.card__filter {
+  opacity: 0;
 }
