@@ -18,7 +18,7 @@ function CardHtmlGeneration (arr){
     sumArr.sort(() => Math.random() - 0.5)
     sumArr.forEach((elem)=>{
         console.log(elem)
-        htmlCards += '<div class="card" data-img="' + elem + '"><div class="card__drawing card__drawing--' + elem + '" style="background-image: url(./../img/' + elem + '.svg);"></div><div class="card__card-shirt"></div></div>'
+        htmlCards += '<div class="card" data-img="' + elem + '"><div class="card__drawing card__drawing--' + elem + '" style="background-image: url(./img/' + elem + '.svg);"></div><div class="card__card-shirt"></div></div>'
     })
 }
 
