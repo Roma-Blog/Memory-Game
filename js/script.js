@@ -17,14 +17,18 @@ let timeMS = 0
 let numberActions = 0
 let countOpenCard = 0
 
+let timerInterval //ID интервала
+
 const cardsArr = [
     'clover',
     'heart',
     'potted-cactus',
-    //'fox',
-    //'chess',
-    //'fighting',
-    //'octopus'
+    'fox',
+    'chess',
+    'fighting',
+    'octopus',
+    'sleeping',
+    'fire'
 ]
 
 numberPairs = cardsArr.length
@@ -54,7 +58,13 @@ document.querySelectorAll('.card').forEach((card) => {
     })
 })
 
-function ChekCard() {
+document.querySelectorAll('.btn-restart').forEach((btn) => { //Рестарт
+    btn.addEventListener('click', function(){
+        window.location.reload()
+    })
+})
+
+function ChekCard() { //Проверка пар
     let openCards = document.querySelectorAll('.card__inverted')
     setTimeout(() => {
         if (openCards[0].dataset.img == openCards[1].dataset.img) {
@@ -73,7 +83,7 @@ function ChekCard() {
     }, 600)
 }
 
-function DeactivateCard(elements, filter) {
+function DeactivateCard(elements, filter) { // Деактивация открытых пар
     elements.forEach((element) => {
         element.classList.remove('card__inverted')
         if (filter) {
@@ -84,32 +94,33 @@ function DeactivateCard(elements, filter) {
     countOpenCard = 0
 }
 
-function IncreasingPairsCounter() {
+function IncreasingPairsCounter() { //Счет кол-ва открытых пар
     pairsFound++
     countCardLeft.textContent = pairsFound
 }
 
-function CountNumberActions() {
+function CountNumberActions() { //Счет кол-ва действий
     numberActions++
     numberActionsEl.textContent = numberActions
 }
 
-function Win() {
+function Win() { //Победа
     let point = (numberPairs/numberActions) * (timeMS/100)
     popUpWin.classList.add('pop-up-win__open')
     popUpWinTime.textContent = DataTime(timeMS)
     popUpWinAction.textContent = numberActions
-    popUpWinPoint.textContent = point
+    popUpWinPoint.textContent = point.toFixed(2)
+    clearInterval(timerInterval)
 }
 
-function TimerStart() {
-    setInterval(() => {
+function TimerStart() { //Счет времени
+    timerInterval = setInterval(() => {
         timeMS += 1000
         timer.textContent = DataTime(timeMS)
     }, 1000)
 }
 
-function DataTime(timems) {
+function DataTime(timems) { //Форматирование времени
     let time = new Date(timems)
     let parts = [
         time.getUTCMinutes(),
