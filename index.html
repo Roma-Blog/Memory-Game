@@ -1,16 +1,52 @@
 <!DOCTYPE html>
 <html lang="ru">
-    <meta charset="UTF-8">
-    <title>Document</title>
-    <link rel="stylesheet" href="./css/style.css">
+<meta charset="UTF-8">
+<title>Document</title>
+<link rel="stylesheet" href="./css/style.css">
 </head>
+
 <body>
     <div class="playing-field">
+        <header class="header">
+            <div class="header__time">
+                00:00
+            </div>
+            <div class="header__time">
+                Кол-во действий:
+                <span>0</span>
+            </div>
+            <div class="header__count-card">
+                Осталось:
+                <span class="header__count-card--left">0</span>
+                /
+                <span class="header__count-card--total">0</span>
+            </div>
+            <button class="header__option-btn">
+                <img src="img/btn/restart.svg">
+            </button>
+        </header>
         <div class="card-box">
-            
+
         </div>
     </div>
-
+    <div class="pop-up-win">
+        <div class="pop-up-win__cont">
+            <h2 class="pop-up-win__title">Вы справились!</h2>
+            <ul class="pop-up-win__list">
+                <li class="pop-up-win__item pop-up-win__time">
+                    Время: <span>00:00</span>
+                </li>
+                <li class="pop-up-win__item pop-up-win__action">
+                    Кол-во действий: <span>10</span>
+                </li>
+                <li class="pop-up-win__item pop-up-win__point">
+                    Заработано очков: <span>100</span>
+                </li>
+            </ul>
+            <button class="pop-up-win__btn">Играть еще</button>
+        </div>
+    </div>
     <script src="js/script.js"></script>
 </body>
+
 </html>

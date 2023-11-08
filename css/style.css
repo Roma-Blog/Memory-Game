@@ -74,6 +74,18 @@ h1, h2, h3, h4, h5, h6 {
 /*-------------------------------------------------------------------------------------*/
 body {
   background-color: #002910;
+  font-family: sans-serif;
+}
+
+.header {
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 64px;
+  font-size: 32px;
+}
+.header__option-btn {
+  background-color: transparent;
 }
 
 .playing-field {
@@ -81,13 +93,13 @@ body {
   border: solid 2px #001f0c;
   border-top: none;
   width: 1400px;
-  height: 800px;
+  height: 900px;
   margin: auto;
 }
 
 .card-box {
-  width: 800px;
-  height: 100%;
+  width: 1000px;
+  height: 800px;
   margin: auto;
   display: flex;
   flex-wrap: wrap;
@@ -103,6 +115,9 @@ body {
   transition: transform 0.5s, opacity 0.5s;
   width: 130px;
   height: 180px;
+}
+.card :hover {
+  cursor: pointer;
 }
 .card__inverted {
   transform: rotateY(180deg);
@@ -127,4 +142,46 @@ body {
 }
 .card__filter {
   opacity: 0;
+}
+.card__filter :hover {
+  cursor: default;
+}
+
+.pop-up-win {
+  display: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5333333333);
+}
+.pop-up-win__open {
+  display: flex;
+}
+.pop-up-win__cont {
+  background-color: #fff;
+  color: #001f0c;
+  padding: 48px 24px;
+}
+.pop-up-win__title {
+  color: #923232;
+  font-size: 48px;
+  margin-bottom: 32px;
+}
+.pop-up-win__list {
+  font-size: 20px;
+  margin-bottom: 48px;
+}
+.pop-up-win__item {
+  margin-bottom: 16px;
+}
+.pop-up-win__btn {
+  font-size: 20px;
+  padding: 16px;
+  width: 100%;
+  color: #fff;
+  background-color: #923232;
 }
